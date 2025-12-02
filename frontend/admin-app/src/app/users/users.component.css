@@ -1,0 +1,91 @@
+.users-page h1 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Table Box */
+.table-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 5px 10px rgba(51, 65, 85, 0.12);
+}
+
+/* Table Base */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.92rem;
+}
+
+thead {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+/* Status Pills */
+.badge {
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Buttons */
+button {
+  border: none;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Activate / Deactivate Buttons */
+.btn-success {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: white;
+}
+
+/* Snackbar Styles */
+.snackbar-success {
+  background-color: #16a34a !important;
+  color: #fff !important;
+}
+
+.snackbar-error {
+  background-color: #dc2626 !important;
+  color: #fff !important;
+}

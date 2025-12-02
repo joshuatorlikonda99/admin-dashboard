@@ -1,0 +1,38 @@
+<div class="users-page">
+  <h1>Users Management</h1>
+
+  <p *ngIf="loading">Loading users...</p>
+  <p *ngIf="error">{{ error }}</p>
+
+  <div class="table-wrapper" *ngIf="!loading && !error">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let u of users">
+          <td>{{ u.name }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.role }}</td>
+          <td>
+            <span class="badge" [class.badge-active]="u.isActive" [class.badge-inactive]="!u.isActive">
+              {{ u.isActive ? 'Active' : 'Inactive' }}
+            </span>
+          </td>
+          <td>
+            <button (click)="toggleActive(u)">
+              {{ u.isActive ? 'Deactivate' : 'Activate' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

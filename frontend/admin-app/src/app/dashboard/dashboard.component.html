@@ -1,0 +1,92 @@
+<div class="dashboard-container">
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1 class="page-title">Analytics Overview</h1>
+    <p class="page-subtitle">Real-time insights and performance metrics</p>
+  </div>
+
+  <!-- KPI Cards Grid -->
+  <div class="kpi-grid">
+    <div *ngFor="let stat of kpiStats" class="kpi-card" [attr.data-color]="stat.color">
+      <div class="kpi-header">
+        <div class="kpi-icon" [ngClass]="stat.color">
+          <span>{{ stat.icon }}</span>
+        </div>
+        <span class="kpi-change positive">{{ stat.change }}</span>
+      </div>
+      <h3 class="kpi-title">{{ stat.title }}</h3>
+      <p class="kpi-value">{{ stat.displayValue }}</p>
+      <div class="kpi-gradient" [ngClass]="stat.color"></div>
+    </div>
+  </div>
+
+  <!-- Charts Row 1 -->
+  <div class="charts-grid">
+    <!-- Area Chart -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <h3 class="chart-title">Weekly Revenue</h3>
+        <span class="chart-badge">Trending Up</span>
+      </div>
+      <div class="chart-wrapper">
+        <canvas 
+          baseChart 
+          [data]="areaChartData" 
+          [options]="areaChartOptions" 
+          type="line">
+        </canvas>
+      </div>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <h3 class="chart-title">Sales by Category</h3>
+        <span class="chart-badge">Distribution</span>
+      </div>
+      <div class="chart-wrapper">
+        <canvas 
+          baseChart 
+          [data]="pieChartData" 
+          [options]="pieChartOptions" 
+          type="pie">
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Row 2 -->
+  <div class="charts-grid">
+    <!-- Bar Chart -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <h3 class="chart-title">User Engagement</h3>
+        <span class="chart-badge">Daily Active</span>
+      </div>
+      <div class="chart-wrapper">
+        <canvas 
+          baseChart 
+          [data]="barChartData" 
+          [options]="barChartOptions" 
+          type="bar">
+        </canvas>
+      </div>
+    </div>
+
+    <!-- Line Chart -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <h3 class="chart-title">Sessions Overview</h3>
+        <span class="chart-badge">Peak Hours</span>
+      </div>
+      <div class="chart-wrapper">
+        <canvas 
+          baseChart 
+          [data]="lineChartData" 
+          [options]="lineChartOptions" 
+          type="line">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

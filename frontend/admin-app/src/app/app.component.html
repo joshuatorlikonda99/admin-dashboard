@@ -1,0 +1,39 @@
+<div class="app-container" [class.dark-mode]="darkMode">
+  <!-- Top Navigation Bar -->
+  <header class="topbar" *ngIf="auth.isLoggedIn()">
+    <div class="topbar-left">
+      <h1 class="logo">
+        <span class="logo-icon">⚡</span>
+        Admin Dashboard
+      </h1>
+    </div>
+
+    <nav class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="nav-icon">📊</span>
+        Dashboard
+      </a>
+      <a routerLink="/users" routerLinkActive="active">
+        <span class="nav-icon">👥</span>
+        Users
+      </a>
+    </nav>
+
+    <div class="user-section">
+      <button class="theme-toggle" (click)="toggleDarkMode()">
+        <span *ngIf="!darkMode">🌙</span>
+        <span *ngIf="darkMode">☀️</span>
+      </button>
+      <span class="user-name">{{ auth.currentUser?.name || 'Admin' }}</span>
+      <button class="logout-btn" (click)="logout()">
+        <span class="logout-icon">🚪</span>
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
